@@ -1,0 +1,12 @@
+C:\Tutorials, Projects and Source codes\Challenges and Projects\c# Projects\TechSteps Bank App\TechSteps.Api\TechSteps.Dtos\bin\Debug\net6.0\TechSteps.Dtos.deps.json
+C:\Tutorials, Projects and Source codes\Challenges and Projects\c# Projects\TechSteps Bank App\TechSteps.Api\TechSteps.Dtos\bin\Debug\net6.0\TechSteps.Dtos.dll
+C:\Tutorials, Projects and Source codes\Challenges and Projects\c# Projects\TechSteps Bank App\TechSteps.Api\TechSteps.Dtos\bin\Debug\net6.0\TechSteps.Dtos.pdb
+C:\Tutorials, Projects and Source codes\Challenges and Projects\c# Projects\TechSteps Bank App\TechSteps.Api\TechSteps.Dtos\obj\Debug\net6.0\TechSteps.Dtos.csproj.AssemblyReference.cache
+C:\Tutorials, Projects and Source codes\Challenges and Projects\c# Projects\TechSteps Bank App\TechSteps.Api\TechSteps.Dtos\obj\Debug\net6.0\TechSteps.Dtos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Tutorials, Projects and Source codes\Challenges and Projects\c# Projects\TechSteps Bank App\TechSteps.Api\TechSteps.Dtos\obj\Debug\net6.0\TechSteps.Dtos.AssemblyInfoInputs.cache
+C:\Tutorials, Projects and Source codes\Challenges and Projects\c# Projects\TechSteps Bank App\TechSteps.Api\TechSteps.Dtos\obj\Debug\net6.0\TechSteps.Dtos.AssemblyInfo.cs
+C:\Tutorials, Projects and Source codes\Challenges and Projects\c# Projects\TechSteps Bank App\TechSteps.Api\TechSteps.Dtos\obj\Debug\net6.0\TechSteps.Dtos.csproj.CoreCompileInputs.cache
+C:\Tutorials, Projects and Source codes\Challenges and Projects\c# Projects\TechSteps Bank App\TechSteps.Api\TechSteps.Dtos\obj\Debug\net6.0\TechSteps.Dtos.dll
+C:\Tutorials, Projects and Source codes\Challenges and Projects\c# Projects\TechSteps Bank App\TechSteps.Api\TechSteps.Dtos\obj\Debug\net6.0\refint\TechSteps.Dtos.dll
+C:\Tutorials, Projects and Source codes\Challenges and Projects\c# Projects\TechSteps Bank App\TechSteps.Api\TechSteps.Dtos\obj\Debug\net6.0\TechSteps.Dtos.pdb
+C:\Tutorials, Projects and Source codes\Challenges and Projects\c# Projects\TechSteps Bank App\TechSteps.Api\TechSteps.Dtos\obj\Debug\net6.0\ref\TechSteps.Dtos.dll
