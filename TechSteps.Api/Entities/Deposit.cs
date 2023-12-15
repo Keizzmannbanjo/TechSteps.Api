@@ -7,7 +7,6 @@ namespace TechSteps.Api.Entities
     {
         [Key]
         public int Id { get; set; }
-
         public DateTime DateEffective { get; set; }
         [Required]
         public int Tenure { get; set; }

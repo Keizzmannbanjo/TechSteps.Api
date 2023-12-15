@@ -41,5 +41,16 @@ namespace TechSteps.Api.Repositories
             var accounts = await db.Accounts.ToListAsync();
             return accounts;
         }
+
+        public async Task<bool> UpdateAccount(Account account)
+        {
+            if (await db.Accounts.SingleOrDefaultAsync(a => a.Id == account.Id) != null)
+            {
+                db.Accounts.Update(account);
+                await db.SaveChangesAsync();
+                return true;
+            }
+            return false;
+        }
     }
 }

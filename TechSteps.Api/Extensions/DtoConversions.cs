@@ -34,5 +34,15 @@ namespace TechSteps.Api.Extensions
                         MiddleName = staff.MiddleName
                     });
         }
+
+        public static DepositDto ConvertToDto(this Deposit deposit, Customer customer, Account account, Bank bank)
+        {
+            return new DepositDto { Id = deposit.Id, DateCreated = deposit.DateCreated, DateEffective = deposit.DateEffective, MaturityDate = deposit.MaturityDate, Amount = deposit.Amount, MaturityAmount = deposit.MaturityAmount, Rate = deposit.Rate, Tenure = deposit.Tenure, InterestType = deposit.InterestType, Comment = deposit.Comment, ClientFullName = customer.FirstName + " " + customer.MiddleName + " " + customer.LastName, ClientType = customer.ClientType, ClientBankName = bank.Name, AccountName = account.Name, AccountNumber = account.AccountNumber, AccountBalance = account.Balance };
+        }
+
+        public static IEnumerable<DepositDto> ConvertToDto(this IEnumerable<Deposit> deposits, IEnumerable<Customer> customers, IEnumerable<Account> accounts, IEnumerable<Bank> banks)
+        {
+            return (from deposit in deposits join customer in customers on deposit.CustomerId equals customer.Id join account in accounts on customer.AccountId equals account.Id join bank in banks on account.BankId equals bank.Id select new DepositDto { Id = deposit.Id, DateCreated = deposit.DateCreated, DateEffective = deposit.DateEffective, MaturityDate = deposit.MaturityDate, Amount = deposit.Amount, MaturityAmount = deposit.MaturityAmount, Rate = deposit.Rate, Tenure = deposit.Tenure, InterestType = deposit.InterestType, Comment = deposit.Comment, ClientFullName = customer.FirstName + " " + customer.MiddleName + " " + customer.LastName, ClientType = customer.ClientType, ClientBankName = bank.Name, AccountName = account.Name, AccountNumber = account.AccountNumber, AccountBalance = account.Balance });
+        }
     }
 }

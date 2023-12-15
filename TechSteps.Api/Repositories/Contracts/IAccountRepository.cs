@@ -8,5 +8,6 @@ namespace TechSteps.Api.Repositories.Contracts
         Task<Account> GetAccountById(int Id);
         Task<Account> GetAccountByNumber(string AccountNumber);
         Task<Account> CreateAccount(Account account);
+        Task<bool> UpdateAccount(Account account);
     }
 }
