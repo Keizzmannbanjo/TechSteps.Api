@@ -28,5 +28,23 @@ namespace TechSteps.Api.Repositories
             }
             return null;
         }
+
+        public async Task<Bank> GetBank(string bankName)
+        {
+            var bank = await db.Banks.SingleOrDefaultAsync(b => b.Name == bankName);
+            return bank;
+        }
+
+        public async Task<Bank> GetBank(int Id)
+        {
+            var bank = await db.Banks.FindAsync(Id);
+            return bank;
+        }
+
+        public async Task<IEnumerable<Bank>> GetBanks()
+        {
+            var banks = await db.Banks.ToListAsync();
+            return banks;
+        }
     }
 }

@@ -22,6 +22,7 @@ builder.Services.AddScoped<IDepositRepository, DepositRepository>();
 builder.Services.AddScoped<IStaffRepository, StaffRepository>();
 builder.Services.AddScoped<IIdGenerator, IdGenerator>();
 builder.Services.AddScoped<IBankRepository, BankRepository>();
+builder.Services.AddScoped<INextOfKinRepository, NextOfKinRepository>();
 
 var app = builder.Build();
 

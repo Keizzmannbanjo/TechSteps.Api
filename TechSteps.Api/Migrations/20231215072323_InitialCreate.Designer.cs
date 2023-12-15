@@ -12,7 +12,7 @@ using TechSteps.Api.Data;
 namespace TechSteps.Api.Migrations
 {
     [DbContext(typeof(ApiDbContext))]
-    [Migration("20231214201954_InitialCreate")]
+    [Migration("20231215072323_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -217,6 +217,9 @@ namespace TechSteps.Api.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("RelatedCustomerId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Relationship")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -226,6 +229,9 @@ namespace TechSteps.Api.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("RelatedCustomerId")
+                        .IsUnique();
 
                     b.ToTable("NextOfKins");
                 });
@@ -300,6 +306,17 @@ namespace TechSteps.Api.Migrations
                     b.Navigation("Customer");
                 });
 
+            modelBuilder.Entity("TechSteps.Api.Entities.NextOfKin", b =>
+                {
+                    b.HasOne("TechSteps.Api.Entities.Customer", "RelatedCustomer")
+                        .WithOne("NextOfKin")
+                        .HasForeignKey("TechSteps.Api.Entities.NextOfKin", "RelatedCustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("RelatedCustomer");
+                });
+
             modelBuilder.Entity("TechSteps.Api.Entities.Account", b =>
                 {
                     b.Navigation("Customer")
@@ -309,6 +326,12 @@ namespace TechSteps.Api.Migrations
             modelBuilder.Entity("TechSteps.Api.Entities.Bank", b =>
                 {
                     b.Navigation("Accounts");
+                });
+
+            modelBuilder.Entity("TechSteps.Api.Entities.Customer", b =>
+                {
+                    b.Navigation("NextOfKin")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

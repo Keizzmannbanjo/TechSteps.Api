@@ -1,28 +1,45 @@
-﻿using TechSteps.Api.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using TechSteps.Api.Data;
+using TechSteps.Api.Entities;
 using TechSteps.Api.Repositories.Contracts;
 
 namespace TechSteps.Api.Repositories
 {
     public class AccountRepository : IAccountRepository
     {
-        public Task<Account> CreateAccount(Account account)
+        private readonly ApiDbContext db;
+
+        public AccountRepository(ApiDbContext db)
         {
-            throw new NotImplementedException();
+            this.db = db;
+        }
+        public async Task<Account> CreateAccount(Account account)
+        {
+            if (await db.Accounts.SingleOrDefaultAsync(a => a.Name == account.Name && a.AccountNumber == account.AccountNumber) == null)
+            {
+                var result = await db.Accounts.AddAsync(account);
+                await db.SaveChangesAsync();
+                return result.Entity;
+            }
+            return null;
         }
 
-        public Task<Account> GetAccountById(int Id)
+        public async Task<Account> GetAccountById(int Id)
         {
-            throw new NotImplementedException();
+            var account = await db.Accounts.FindAsync(Id);
+            return account;
         }
 
-        public Task<Account> GetAccountByNumber(string AccountNumber)
+        public async Task<Account> GetAccountByNumber(string AccountNumber)
         {
-            throw new NotImplementedException();
+            var account = await db.Accounts.SingleOrDefaultAsync(a => a.AccountNumber == AccountNumber);
+            return account;
         }
 
-        public Task<IEnumerable<Account>> GetAccounts()
+        public async Task<IEnumerable<Account>> GetAccounts()
         {
-            throw new NotImplementedException();
+            var accounts = await db.Accounts.ToListAsync();
+            return accounts;
         }
     }
 }

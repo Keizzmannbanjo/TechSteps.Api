@@ -23,21 +23,6 @@ namespace TechSteps.Api.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "NextOfKins",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    FullName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Telephone = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Relationship = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_NextOfKins", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Staffs",
                 columns: table => new
                 {
@@ -140,6 +125,28 @@ namespace TechSteps.Api.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "NextOfKins",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FullName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Telephone = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Relationship = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    RelatedCustomerId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_NextOfKins", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_NextOfKins_Customers_RelatedCustomerId",
+                        column: x => x.RelatedCustomerId,
+                        principalTable: "Customers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Accounts_AccountNumber",
                 table: "Accounts",
@@ -167,6 +174,12 @@ namespace TechSteps.Api.Migrations
                 name: "IX_Deposits_CustomerId",
                 table: "Deposits",
                 column: "CustomerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_NextOfKins_RelatedCustomerId",
+                table: "NextOfKins",
+                column: "RelatedCustomerId",
+                unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

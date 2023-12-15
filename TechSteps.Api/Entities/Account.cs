@@ -13,7 +13,7 @@ namespace TechSteps.Api.Entities
         public string AccountNumber { get; set; }
 
         [Column(TypeName = "Money")]
-        public decimal Balance { get; set; }
+        public decimal Balance { get; set; } = 0.0M;
 
         public string Name { get; set; }
 

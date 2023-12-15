@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using TechSteps.Api.Entities;
 using TechSteps.Api.Extensions;
 using TechSteps.Api.Repositories.Contracts;
 using TechSteps.Dtos.Models;
@@ -20,7 +19,7 @@ namespace TechSteps.Api.Controllers
         }
 
         [HttpGet("{Id}")]
-        public async Task<ActionResult<Staff>> GetStaff(int Id)
+        public async Task<ActionResult<StaffDto>> GetStaff(int Id)
         {
             try
             {
@@ -38,8 +37,28 @@ namespace TechSteps.Api.Controllers
             }
         }
 
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<StaffDto>>> GetStaffs()
+        {
+            try
+            {
+                var staffs = await staffRepository.GetStaffs();
+                if (staffs == null)
+                {
+                    return NotFound();
+                }
+                var staffsDto = staffs.ConvertToDto();
+                return Ok(staffsDto);
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error in retrieving data");
+            }
+        }
+
         [HttpPost]
-        public async Task<ActionResult<Staff>> PostStaff([FromBody] CreateStaffDto createStaffDto)
+        [Route("SignUp")]
+        public async Task<ActionResult<StaffDto>> PostStaff([FromBody] CreateStaffDto createStaffDto)
         {
             try
             {
