@@ -63,3 +63,8 @@ C:\Tutorials, Projects and Source codes\Challenges and Projects\c# Projects\Tech
 C:\Tutorials, Projects and Source codes\Challenges and Projects\c# Projects\TechSteps Bank App\TechSteps.Api\TechSteps.Api\obj\Debug\net6.0\ref\TechSteps.Api.dll
 C:\Tutorials, Projects and Source codes\Challenges and Projects\c# Projects\TechSteps Bank App\TechSteps.Api\TechSteps.Api\bin\Debug\net6.0\TechSteps.Dtos.dll
 C:\Tutorials, Projects and Source codes\Challenges and Projects\c# Projects\TechSteps Bank App\TechSteps.Api\TechSteps.Api\bin\Debug\net6.0\TechSteps.Dtos.pdb
+C:\Tutorials, Projects and Source codes\Challenges and Projects\c# Projects\TechSteps Bank App\TechSteps.Api\TechSteps.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Tutorials, Projects and Source codes\Challenges and Projects\c# Projects\TechSteps Bank App\TechSteps.Api\TechSteps.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Tutorials, Projects and Source codes\Challenges and Projects\c# Projects\TechSteps Bank App\TechSteps.Api\TechSteps.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Tutorials, Projects and Source codes\Challenges and Projects\c# Projects\TechSteps Bank App\TechSteps.Api\TechSteps.Api\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Tutorials, Projects and Source codes\Challenges and Projects\c# Projects\TechSteps Bank App\TechSteps.Api\TechSteps.Api\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll

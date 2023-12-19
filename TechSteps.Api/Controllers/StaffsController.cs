@@ -19,7 +19,7 @@ namespace TechSteps.Api.Controllers
         }
 
         [HttpGet("{Id}")]
-        public async Task<ActionResult<StaffDto>> GetStaff(int Id)
+        public async Task<ActionResult<StaffDto>> GetStaff(string Id)
         {
             try
             {

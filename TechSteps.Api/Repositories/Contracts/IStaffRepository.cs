@@ -7,7 +7,7 @@ namespace TechSteps.Api.Repositories.Contracts
     {
         Task<IEnumerable<Staff>> GetStaffs();
         Task<Staff> AddStaff(CreateStaffDto createStaffDto);
-        Task<Staff> GetStaffById(int Id);
+        Task<Staff> GetStaffById(string Id);
         Task<bool> AuthenticateStaff(StaffSignInDto staffSignInDto);
     }
 }

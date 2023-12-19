@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using TechSteps.Api.Data;
+using TechSteps.Api.Entities;
 using TechSteps.Api.Repositories;
 using TechSteps.Api.Repositories.Contracts;
 
@@ -14,6 +16,7 @@ builder.Services.AddSwaggerGen();
 
 // Database connection
 builder.Services.AddDbContext<ApiDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
+builder.Services.AddIdentity<Staff, IdentityRole>().AddEntityFrameworkStores<ApiDbContext>();
 
 // Services Injections
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
